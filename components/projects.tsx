@@ -1,4 +1,3 @@
-// pages/projects.js
 import React from 'react';
 import Image from 'next/image';
 
@@ -55,46 +54,45 @@ const Projects = () => {
   ];
 
   return (
-    <section className="text-base md:text-lg lg:text-xl project-section bg-secondary p-14 text-center">
-    <div text-center m-0 h-full >
-      <h1 className="text-primary font-bold text-3xl mb-5">My Projects</h1>
-      <div className="project-grid grid grid-cols-2 gap-5">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card bg-secondary p-5 rounded-xl transition-all hover:scale-105">
-            <Image
-              src={project.image}
-              alt={`${project.title} project image`}
-              width={300}
-              height={200}
-              layout="responsive"
-              objectFit="cover"
-              className="project-image rounded-xl"
-            />
-            <h3 className="project-title text-primary text-2xl mt-4">{project.title}</h3>
-            <p className="project-description text-gray-800 text-xs m-3">{project.description}</p>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github-link inline-block px-3 py-4 bg-primary text-secondary rounded-md font-bold transition-colors hover:bg-secondary hover:text-primary"
-            >
-              View Code on GitHub
-            </a>
-          </div>
-          
-        ))}
+    <section className="text-base sm:text-sm md:text-lg lg:text-xl project-section bg-secondary p-6 sm:p-8 md:p-14 text-center max-w-full overflow-x-hidden">
+      <div className="m-0 h-full max-w-full">
+        <h1 className="text-primary font-bold text-2xl sm:text-xl md:text-3xl mb-5">My Projects</h1>
+        <div className="project-grid grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card bg-secondary p-4 sm:p-5 rounded-xl transition-all hover:scale-105 max-w-full">
+              <Image
+                src={project.image}
+                alt={`${project.title} project image`}
+                width={300}
+                height={200}
+                layout="responsive"
+                objectFit="cover"
+                className="project-image rounded-xl"
+              />
+              <h3 className="project-title text-primary text-xl sm:text-lg md:text-2xl mt-4">{project.title}</h3>
+              <p className="project-description text-gray-800 text-xs sm:text-sm md:text-base m-3">{project.description}</p>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link inline-block px-3 py-4 bg-primary text-secondary rounded-md font-bold transition-colors hover:bg-secondary hover:text-primary"
+              >
+                View Code on GitHub
+              </a>
+            </div>
+          ))}
+        </div>
+        <div className="github-profile-link mt-4 flex gap-3 ml-4 justify-center items-center">
+          <a
+            href="https://github.com/muskaanfayyaz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-link inline-block px-3 py-4 bg-primary text-secondary rounded-md font-bold transition-colors hover:bg-secondary hover:text-primary"
+          >
+            Visit My GitHub Profile
+          </a>
+        </div>
       </div>
-      <div className="github-profile-link mt-4 flex gap-3 ml-4 justify-center items-center">
-        <a
-          href="https://github.com/muskaanfayyaz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="github-link inline-block px-3 py-4 bg-primary text-secondary rounded-md font-bold transition-colors hover:bg-secondary hover:text-primary"
-        >
-          Visit My GitHub Profile
-        </a>
-      </div>
-    </div>
     </section>
   );
 };
